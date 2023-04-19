@@ -1,0 +1,236 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(245,204,222);
+background: radial-gradient(circle, rgba(245,204,222,1) 0%, rgba(148,187,233,1) 100%);
+background-size: 200% auto;
+    animation: gradient 10s ease infinite;
+    color: #fff;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: left;
+    }
+    50% {
+      background-position: right;
+    }
+    100% {
+      background-position: left;
+    }
+  }
+
+.wrapper{
+    /* background-color: #fff; */
+    background-color: rgba(24, 24, 26, 0.4);
+
+    width: 25rem;
+    border-radius: 7px;
+}
+input{
+    background-color: rgba(24, 24, 26, 0.1);
+    color: #fff;
+    
+}
+::placeholder{
+    color: #fff;
+    opacity: 1;
+}
+.wrapper header{
+    color: #43AFFC;
+    font-size: 21px;
+    font-weight: 500;
+    padding: 1rem 0.94rem;
+    border-bottom: 1px solid #bfbfbf;
+    display: flex;
+    align-items: center;
+}
+
+header i{
+    cursor: pointer;
+    font-size: 0px;
+    margin-right: 0.5rem;
+}
+
+.wrapper.active header i{
+    font-size: 30px;
+    margin-left: 0.31rem;
+}
+
+.wrapper .input-part{
+    margin: 1.25rem 1.56rem 1.88rem;
+}
+
+.wrapper.active .input-part{
+    display: none;
+}
+.input-part .info-txt{
+    font-size: 17px;
+    text-align: center;
+    padding: 0.75rem 0.62rem;
+    border-radius: 7px;
+    margin-bottom: 0.94rem;
+    display: none;
+}
+
+.info-txt.error{
+    display: block;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+.info-txt.pending{
+    display: block;
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+
+.input-part :where(input, button){
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 18px;
+}
+
+
+.input-part input{
+    border: 1px solid #bfbfbf;
+    text-align: center;
+}
+
+.input-part input:is(:focus, :valid){
+    border: 2px solid #43AFFC;
+}
+
+.input-part .separator{
+    height: 1px;
+    width: 100%;
+    /* background-color: #ccc; */
+    margin: 1.56rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator::before{
+    content: 'or';
+    /* background-color: rgba(24, 24, 26, 0.5); */
+    padding: 0 0.94rem;
+    font-size: 19px;
+    color: #ccc;
+}
+.input-part button{
+    color: #fff;
+    background-color: #43AFFC;
+    cursor: pointer;
+}
+
+.wrapper .weather-part{
+    margin: 1.88rem 0 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper.active .weather-part{
+    display: flex;
+}
+
+.weather-part img{
+    max-width: 125px;  
+}
+
+.weather-part .temp{
+    display: flex;
+    font-size: 72px;
+    font-weight: 500;
+}
+
+.weather-part .temp .numb{
+    font-weight: 600;
+}
+
+.weather-part .temp .deg{
+    font-size: 40px;
+    margin: 0.625rem 0.313rem 0 0;
+    display: block;
+}
+
+.weather-part .location{
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.87rem;
+}
+
+.location i{
+    font-size: 22px;
+    margin-right: 0.312rem;
+}
+
+.weather-part .bottom-details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #bfbfbf;
+}
+
+.bottom-details .column{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 1rem 0;
+}
+
+.column i{
+    color:#43AFFC;
+    font-size: 40px;
+}
+
+.column.humidity{
+    border-left: 1px solid #bfbfbf;
+}
+
+.details .temp, .humidity span{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -0.187rem;
+}
+
+.details .temp .deg{
+    margin: 0;
+    font-size: 17px;
+    padding: 0 0.125rem 0 0.125rem;
+}
+
+.details p{
+    font-size: 14px;
+    margin-top: -0.37rem;
+
+}
+
+
+@media only screen and (max-width:390px){
+    .wrapper{
+        width: 20rem;
+    }
+}
